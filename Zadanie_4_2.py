@@ -1,16 +1,23 @@
-def Is_palindrom(string):
+def is_palindrom(string):
     '''
         Checking whether the string is palidrome
         Argument: string
     '''
-    string_reversed = string[-1::-1]
-    if string == string_reversed:
-        return True
-    else:
-        return False
+    string_isalpha_casefold = ""
+
+    for c in string:
+        if c.isalpha():
+            string_isalpha_casefold += c.casefold()
+
+    string_reversed = string_isalpha_casefold[-1::-1]
     
-print(Is_palindrom('kajak'))
-print(Is_palindrom('kajaki'))
+    return string_isalpha_casefold == string_reversed
+   
+
+print(is_palindrom('ka Jak!!  '))
+
+
+
 
 
 
